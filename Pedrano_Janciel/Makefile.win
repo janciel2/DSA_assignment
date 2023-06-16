@@ -1,0 +1,36 @@
+# Project: ReviewActivity
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = ../REVIEW_ACTIVITY_01/main.o ../REVIEW_ACTIVITY_01/StaticArray.o ../REVIEW_ACTIVITY_01/DynamicArray.o $(RES)
+LINKOBJ  = ../REVIEW_ACTIVITY_01/main.o ../REVIEW_ACTIVITY_01/StaticArray.o ../REVIEW_ACTIVITY_01/DynamicArray.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  -fmessage-length=0 
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = Pedrano_Janciel.exe
+CXXFLAGS = $(CXXINCS)   -fmessage-length=0
+CFLAGS = $(INCS)   -fmessage-length=0
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Pedrano_Janciel.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "Pedrano_Janciel.exe" $(LIBS)
+
+../REVIEW_ACTIVITY_01/main.o: ../REVIEW_ACTIVITY_01/main.c
+	$(CC) -c ../REVIEW_ACTIVITY_01/main.c -o ../REVIEW_ACTIVITY_01/main.o $(CFLAGS)
+
+../REVIEW_ACTIVITY_01/StaticArray.o: ../REVIEW_ACTIVITY_01/StaticArray.c
+	$(CC) -c ../REVIEW_ACTIVITY_01/StaticArray.c -o ../REVIEW_ACTIVITY_01/StaticArray.o $(CFLAGS)
+
+../REVIEW_ACTIVITY_01/DynamicArray.o: ../REVIEW_ACTIVITY_01/DynamicArray.c
+	$(CC) -c ../REVIEW_ACTIVITY_01/DynamicArray.c -o ../REVIEW_ACTIVITY_01/DynamicArray.o $(CFLAGS)
